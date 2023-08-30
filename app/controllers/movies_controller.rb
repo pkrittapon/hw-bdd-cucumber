@@ -45,6 +45,10 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def search_tmdb
+    redirect_to root_path
+    flash[:notice] = "'#{params[:movie][:title]}' was not found in TMDb."
+  end
   private
 
   def force_index_redirect
