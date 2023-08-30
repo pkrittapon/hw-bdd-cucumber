@@ -6,7 +6,6 @@ gem 'rails', '4.2.11'
 
 gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '>= 2.7.1'
-
 gem 'jquery-rails'
 
 group :development do
@@ -19,6 +18,9 @@ group :development, :test do
   gem 'byebug'
   gem 'database_cleaner'
   gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
+  gem 'capybara'         # lets Cucumber pretend to be a web browser
+  gem 'launchy'          # a useful debugging aid for user stories
   gem 'rspec-rails'
 
   gem 'pry'
