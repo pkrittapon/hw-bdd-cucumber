@@ -8,6 +8,12 @@ gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '>= 2.7.1'
 gem 'jquery-rails'
 
+
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection', "~>1.0"
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -28,9 +34,14 @@ group :development, :test do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3.6'
+  gem 'dotenv-rails'
 end
 
 group :production do
   gem 'pg', '~> 0.2'
   gem 'rails_12factor'
+end
+
+if ['development', 'test'].include? ENV['RAILS_ENV']
+  Dotenv::Railtie.load
 end
